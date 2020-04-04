@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8"/>
     <title>Markdown Editor</title>
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="lib/material-icons.css">
@@ -38,7 +39,7 @@
     <div id="navbar">
       <div id="navcontent">
         <a id="logo" href = "https://github.com/jbt/markdown-editor" tooltip = "Check out the code on Github!">
-          <p id="title" class="left"># Markdown Editor</p>
+          <p id="title" class="left"># Markdown Editor for any language</p>
         </a>
         <p id="openbutton" title="Open from Disk" class="navbutton left" onclick="document.getElementById('fileInput').click();"><i class="material-icons">open_in_browser</i></p>
         <input id="fileInput" type="file" class="hidden" accept=".md,.mdown,.txt,.markdown"/>
@@ -69,6 +70,7 @@
     <script src="lib/rawinflate.js"></script>
     <script src="lib/rawdeflate.js"></script>
     <script src = "lib/sweetalert.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markable@0.0.3/src/markable.min.js"></script>
     <script src="index.js"></script>
   </body>
 </html>

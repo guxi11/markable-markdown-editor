@@ -82,7 +82,8 @@ function setOutput(val) {
 
     var out = document.getElementById('out');
     var old = out.cloneNode(true);
-    out.innerHTML = md.render(val);
+    // Use markable
+    out.innerHTML = md.render(markable(val));
     emojify.run(out);
     console.log(out.innerHTML);
     // Checks if there are any task-list present in out.innerHTML
@@ -105,6 +106,32 @@ function setOutput(val) {
 CodeMirrorSpellChecker({
     codeMirrorInstance: CodeMirror,
 });
+
+// Init Content
+{
+    var initContent = "# New Document with Markable\n\n" +
+                    "If you are writing in a language other than English, when you are typing, if you want to use Markdown's grammar, you need to switch to the English input method when entering English symbols, and then switch back.\n\n" +
+                    "Markable seamlessly completed this input method switch for us. So we only care to write in the language we are using, it directly translates the non-English symbols related to Markdown grammar into English symbols, so that the text can be parsed by the Markdown parser.\n\n" +
+                    "Take Chinese as an example:\n\n" +
+                    "》 青山一道同云雨，明月何曾是两乡。\n\n" +
+                    "will turn to\n\n" +
+                    "> 青山一道同云雨，明月何曾是两乡。\n\n" +
+                    "···js\n" +
+                    "console.log('Hello World');\n" +
+                    "···\n\n" +
+                    "will turn to\n\n" +
+                    "```js\n" +
+                    "console.log('Hello World');\n" +
+                    "```\n\n";
+    var e = {
+        getValue: function() {
+            return initContent;
+        }
+    }
+    var code = document.getElementById('code');
+    code.innerHTML = render_tasklist(e.getValue());
+    update(e);
+}
 
 var editor = CodeMirror.fromTextArea(document.getElementById('code'), {
     mode: "spell-checker",
@@ -165,7 +192,7 @@ document.addEventListener('drop', function(e) {
 
 //Print the document named as the document title encoded to avoid strange chars and spaces
 function saveAsMarkdown() {
-    save(editor.getValue(), document.title.replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/\s]/gi, '') + ".md");
+    save(markable(editor.getValue()), document.title.replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/\s]/gi, '') + ".md");
 }
 
 //Print the document named as the document title encoded to avoid strange chars and spaces
