@@ -1,8 +1,10 @@
-# Live (GitHub-Flavored) Markdown Editor
+# Live (GitHub-Flavored) Markable Markdown Editor
+
+Markdown Editor for any language.
 
 ## Usage
 
-[Use it here](//jbt.github.io/markdown-editor). The live markdown reader will display a preview as you type.
+[Use it here](http://lengyue.ink/markable-markdown-editor/). The live markdown reader will display a preview as you type.
 
 View GitHub Flavoured Markdown guide [here](https://enterprise.github.com/downloads/en/markdown-cheatsheet.pdf).
 
