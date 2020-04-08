@@ -83,6 +83,8 @@ function setOutput(val) {
     var out = document.getElementById('out');
     var old = out.cloneNode(true);
     // Use markable
+    console.log(val);
+    console.log(markable(val))
     out.innerHTML = md.render(markable(val));
     emojify.run(out);
     console.log(out.innerHTML);
@@ -110,21 +112,17 @@ CodeMirrorSpellChecker({
 // Init Content
 {
     var initContent = "# New Document with Markable\n\n" +
-                    "If you are writing in a language other than English, when you are typing, if you want to use Markdown's grammar, you need to switch to the English input method when entering English symbols, and then switch back.\n\n" +
-                    "Markable seamlessly completed this input method switch for us. So we only can concentriate on writing in the language we are using, it will translates the non-English symbols related to Markdown grammar into English symbols, so that the text can be parsed by the Markdown parser.\n\n" +
+                    "Markable can translate non-English symbols related to Markdown syntax into English. So when you write in a language other than English, if you want to use Markdown syntax, there is no need to switch input methods.\n\n" +
+                    "Just concentrate and write in your current language.\n\n" +
+                    "---\n\n" +
                     "Take Chinese as an example:\n\n" +
-                    "**BLOCKQUOTES**\n\n" +
                     "》 青山一道同云雨，明月何曾是两乡。\n\n" +
-                    "will turn to\n\n" +
-                    "> 青山一道同云雨，明月何曾是两乡。\n\n" +
-                    "**CODE BLOCKS**\n\n" +
+                    "在·webpack·里，想要使用一个插件，你只需要 ·require()· 它，然后把它添加到 ·plugins· 数组中。\n\n" +
                     "···js\n" +
                     "console.log('Hello World');\n" +
                     "···\n\n" +
-                    "will turn to\n\n" +
-                    "```js\n" +
-                    "console.log('Hello World');\n" +
-                    "```\n\n";
+                    "！【头像例子】（https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2398780591,2077326219&fm=26&gp=0.jpg “头像\"）\n\n" +
+                    "【markable】（https://github.com/hbhde/markable）\n\n";
     var e = {
         getValue: function() {
             return initContent;

@@ -1,4 +1,4 @@
-# Live (GitHub-Flavored) Markable Markdown Editor
+# Markable Markdown Editor
 
 Markdown editor for any language, because other language symbols related to Markdown syntax (other symbols than English) will be converted to English through [markable](https://github.com/hbhde/markable).
 
