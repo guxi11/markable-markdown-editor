@@ -109,20 +109,23 @@ CodeMirrorSpellChecker({
     codeMirrorInstance: CodeMirror,
 });
 
+const initContent = "\
+# New Document with Markable\n\n\
+## Markable 是什么？\n\n\
+【Markable】（https://github.com/hbhde/markable） 能让你用任何语言编写 Markdown 文档。它将非英语的与 Markdown 语法 相关的符号翻译成英文，以便任何 Markdown 解析器都可以解析它们（即是，让它们变得 markable ）。\n\n\
+这样，当我们在用中文写作的时候，不再需要为了使用 Markdown 语法，切换到英文。\n\n\
+下面是一些例子，你也可以写写看。\n\n\
+## 试试看！\n\n\
+！【动漫头像】（https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2398780591,2077326219&fm=26&gp=0.jpg “头像\"）\n\n\
+》图片来自【百度】（https://baidu.com）\n\n\
+我们也可以用中文字符标记代码块（比如一段·js·）：\n\n\
+···js\n\
+let theReasonWhyIWasParsed = 'markable!';\n\
+···\n\
+";
+
 // Init Content
 {
-    var initContent = "# New Document with Markable\n\n" +
-                    "Markable can translate non-English symbols related to Markdown syntax into English. So when you write in a language other than English, if you want to use Markdown syntax, there is no need to switch input methods.\n\n" +
-                    "Just concentrate and write in your current language.\n\n" +
-                    "---\n\n" +
-                    "Take Chinese as an example:\n\n" +
-                    "》 青山一道同云雨，明月何曾是两乡。\n\n" +
-                    "在·webpack·里，想要使用一个插件，你只需要 ·require()· 它，然后把它添加到 ·plugins· 数组中。\n\n" +
-                    "···js\n" +
-                    "console.log('Hello World');\n" +
-                    "···\n\n" +
-                    "！【头像例子】（https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2398780591,2077326219&fm=26&gp=0.jpg “头像\"）\n\n" +
-                    "【markable】（https://github.com/hbhde/markable）\n\n";
     var e = {
         getValue: function() {
             return initContent;
