@@ -121,7 +121,16 @@ const initContent = "\
 我们也可以用中文字符标记代码块（比如一段·js·）：\n\n\
 ···js\n\
 let theReasonWhyIWasParsed = 'markable!';\n\
-···\n\
+···\n\n\
+## 在其他编辑器中使用 Markable\n\n\
+遗憾的是，目前还没有其他 Markdown 编辑器使用 Markable。\n\n\
+但没关系，我们可以在这里专注地写作，然后点击上面的下载按钮，我们将得到翻译后的规范的 Markdown 文档。\n\n\
+### 如果你是开发者\n\n\
+你可以在自己的项目中使用 Markable，而且很简单——只需要在文本被 Markdown 解析器解析之前 Markable 一下。\n\n\
+比如，在本项目中：\n\n\
+···js\n\
+out.innerHTML = md.render(markable(val));\n\
+···\n\n\
 ";
 
 // Init Content
